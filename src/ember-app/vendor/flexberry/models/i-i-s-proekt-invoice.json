@@ -1,0 +1,91 @@
+﻿{
+  "name": "IISProektInvoice",
+  "modelName": "i-i-s-proekt-invoice",
+  "className": "Invoice",
+  "nameSpace": "IIS.Proekt",
+  "parentModelName": "i-i-s-proekt-document",
+  "parentClassName": "Document",
+  "attrs": [
+    {
+      "name": "customerName",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "note",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "shipmentDateTime",
+      "type": "date",
+      "flexberryType": "tDateTime",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "status",
+      "type": "i-i-s-proekt-invoice-status",
+      "flexberryType": "InvoiceStatus",
+      "notNull": false,
+      "defaultValue": "New",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "totalSum",
+      "type": "decimal",
+      "flexberryType": "double",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "totalWeight",
+      "type": "decimal",
+      "flexberryType": "double",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": false,
+      "name": "employee",
+      "relatedTo": "i-i-s-proekt-employee",
+      "inverse": null
+    },
+    {
+      "polymorphic": false,
+      "presence": false,
+      "name": "order",
+      "relatedTo": "i-i-s-proekt-order",
+      "inverse": null
+    }
+  ],
+  "hasMany": [
+    {
+      "name": "invoiceItem",
+      "relatedTo": "i-i-s-proekt-invoice-item",
+      "inverse": "invoice"
+    }
+  ],
+  "projections": [],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

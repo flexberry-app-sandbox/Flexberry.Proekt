@@ -1,0 +1,11 @@
+﻿{
+  "nameSpace": "IIS.Proekt",
+  "className": "InvoiceStatus",
+  "enumObjects": {
+    "New": "",
+    "Issued": "",
+    "Paused": "",
+    "Ready": "",
+    "Shipped": ""
+  }
+}

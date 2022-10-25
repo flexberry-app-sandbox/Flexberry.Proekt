@@ -1,0 +1,48 @@
+﻿{
+  "name": "IISProektStorehouse",
+  "modelName": "i-i-s-proekt-storehouse",
+  "className": "Storehouse",
+  "nameSpace": "IIS.Proekt",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "address",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "number",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": true,
+      "defaultValue": "1",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": false,
+      "name": "employee",
+      "relatedTo": "i-i-s-proekt-employee",
+      "inverse": null
+    }
+  ],
+  "hasMany": [
+    {
+      "name": "storeProduct",
+      "relatedTo": "i-i-s-proekt-store-product",
+      "inverse": "storehouse"
+    }
+  ],
+  "projections": [],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

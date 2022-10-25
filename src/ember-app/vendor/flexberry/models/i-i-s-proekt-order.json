@@ -1,0 +1,66 @@
+﻿{
+  "name": "IISProektOrder",
+  "modelName": "i-i-s-proekt-order",
+  "className": "Order",
+  "nameSpace": "IIS.Proekt",
+  "parentModelName": "i-i-s-proekt-document",
+  "parentClassName": "Document",
+  "attrs": [
+    {
+      "name": "paymentDate",
+      "type": "date",
+      "flexberryType": "tDateTime",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "shipmentDate",
+      "type": "date",
+      "flexberryType": "tDateTime",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "status",
+      "type": "i-i-s-proekt-order-status",
+      "flexberryType": "OrderStatus",
+      "notNull": false,
+      "defaultValue": "New",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "totalSum",
+      "type": "decimal",
+      "flexberryType": "double",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": false,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": false,
+      "name": "employee",
+      "relatedTo": "i-i-s-proekt-employee",
+      "inverse": null
+    }
+  ],
+  "hasMany": [
+    {
+      "name": "orderItem",
+      "relatedTo": "i-i-s-proekt-order-item",
+      "inverse": "order"
+    }
+  ],
+  "projections": [],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

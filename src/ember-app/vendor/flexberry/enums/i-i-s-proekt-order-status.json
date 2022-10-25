@@ -1,0 +1,9 @@
+﻿{
+  "nameSpace": "IIS.Proekt",
+  "className": "OrderStatus",
+  "enumObjects": {
+    "New": "",
+    "Paid": "",
+    "Canceled": ""
+  }
+}
